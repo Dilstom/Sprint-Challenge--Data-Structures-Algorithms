@@ -1,27 +1,16 @@
 def heapsort(arr):
-    # initialize an empty heap
     heap = Heap()
-    # initialize a list to hold all of our sorted output
-    sorted = [0] * len(arr)
-    # loop over all elements in arr
+    sortList = []
     for el in arr:
-    # insert each element into the heap
         heap.insert(el)
-    # loop over all elements in arr
-    for i in range(len(arr)):
-    # call heap.delete
-    # store the deleted element in the sorted list in the proper order
-        sorted[len(arr) - i - 1] = heap.delete()
-            # instead of sorted[i] = heap.delete() -> sorted.reverse()
-    # return the sorted list
-    return sorted
-
+    while len(heap.storage) > 0:
+        sortList.insert(0, heap.delete())
+    return sortList
  
-
 class Heap:
   def __init__(self):
     self.storage = []
-    def depth_first_for_each(self, cb):
+    
   def insert(self, value):
     self.storage.append(value)
     self._bubble_up(len(self.storage) - 1)
