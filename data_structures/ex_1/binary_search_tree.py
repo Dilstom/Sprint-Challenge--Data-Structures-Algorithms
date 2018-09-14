@@ -34,11 +34,11 @@ class BinarySearchTree:
             # check if the popped-off node has a left child
             if current_node.left:
             # add the left child to the stack
-                stack.append(current_node.right)
+                stack.append(current_node.left)
             #invoke the cb on the popped-off node
             cb(current_node.value)
 
-    # solution - the most expensive because of array (shift all values)
+    # solution - the most expensive because of array (shifts all values)
     def breadth_first_for_each(self, cb):
     # initialize a list to be our queue
     queue = []

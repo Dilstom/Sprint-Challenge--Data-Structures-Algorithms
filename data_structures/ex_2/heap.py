@@ -7,7 +7,6 @@ def heapsort(arr):
         for el in arr:
     # insert each element into the heap
             heap.insert(el)
-
     # loop over all elements in arr
         for i in range(len(arr)):
     # call heap.delete
